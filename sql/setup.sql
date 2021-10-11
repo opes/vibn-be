@@ -6,5 +6,4 @@ CREATE TABLE users (
   spotify_email TEXT NOT NULL,
   spotify_profile TEXT,
   spotify_image TEXT,
-  spotify_href TEXT
 )
