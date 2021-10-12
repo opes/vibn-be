@@ -1,4 +1,6 @@
 DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS artists CASCADE;
+DROP TABLE IF EXISTS user_artists CASCADE;
 
 CREATE TABLE users (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -6,4 +8,17 @@ CREATE TABLE users (
   spotify_email TEXT NOT NULL,
   spotify_profile TEXT,
   spotify_image TEXT
-)
+);
+
+CREATE TABLE artists (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  artist_name TEXT NOT NULL,
+  artist_image TEXT,
+  artist_link TEXT NOT NULL,
+  artist_genre TEXT
+);
+
+CREATE TABLE user_artists (
+  user_id INT NOT NULL REFERENCES users(id),
+  artist_id INT NOT NULL REFERENCES artists(id)
+);
