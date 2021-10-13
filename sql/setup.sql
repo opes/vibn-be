@@ -14,7 +14,10 @@ CREATE TABLE users (
 
 CREATE TABLE artists (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  artists_array TEXT []
+  artist_name TEXT NOT NULL,
+  artist_image TEXT,
+  artist_link TEXT NOT NULL,
+  artist_genre TEXT
 );
 
 CREATE TABLE user_artists (
