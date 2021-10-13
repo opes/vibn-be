@@ -11,4 +11,10 @@ describe('vibin-be routes', () => {
   afterAll(() => {
     pool.end();
   });
+  
+  it('does nothing important yet', async () => {
+    const res = 'hi';
+
+    expect(res).toEqual('hi');
+  });
 });
