@@ -19,6 +19,6 @@ CREATE TABLE artists (
 );
 
 CREATE TABLE user_artists (
-  user_id INT NOT NULL REFERENCES users(id),
-  artist_id INT NOT NULL REFERENCES artists(id)
+  user_id BIGINT NOT NULL REFERENCES users(id),
+  artist_id BIGINT NOT NULL REFERENCES artists(id)
 );
