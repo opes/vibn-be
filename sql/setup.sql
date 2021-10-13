@@ -22,3 +22,5 @@ CREATE TABLE user_artists (
   user_id BIGINT NOT NULL REFERENCES users(id),
   artist_id BIGINT NOT NULL REFERENCES artists(id)
 );
+
+-- CREATE TABLE 
