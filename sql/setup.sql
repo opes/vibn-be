@@ -1,6 +1,8 @@
 DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS artists CASCADE;
 DROP TABLE IF EXISTS user_artists CASCADE;
+DROP TABLE IF EXISTS conversations CASCADE;
+DROP TABLE IF EXISTS user_conversations CASCADE;
 
 CREATE TABLE users (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -12,10 +14,7 @@ CREATE TABLE users (
 
 CREATE TABLE artists (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  artist_name TEXT NOT NULL,
-  artist_image TEXT,
-  artist_link TEXT NOT NULL,
-  artist_genre TEXT
+  artists_array TEXT []
 );
 
 CREATE TABLE user_artists (
@@ -23,4 +22,15 @@ CREATE TABLE user_artists (
   artist_id BIGINT NOT NULL REFERENCES artists(id)
 );
 
--- CREATE TABLE 
+CREATE TABLE conversations (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  to_user BIGINT,
+  from_user BIGINT,
+  message TEXT,
+  date TEXT
+);
+
+CREATE TABLE user_conversations (
+  user_id BIGINT NOT NULL REFERENCES users(id),
+  conversation_id BIGINT NOT NULL REFERENCES conversations(id)
+);
