@@ -27,8 +27,8 @@ CREATE TABLE user_artists (
 
 CREATE TABLE conversations (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  to_user BIGINT,
-  from_user BIGINT,
+  to_user TEXT NOT NULL,
+  from_user TEXT NOT NULL,
   message TEXT,
   date TEXT
 );
