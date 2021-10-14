@@ -41,4 +41,21 @@ describe('Conversation routes', () => {
 
     expect(res.body).toEqual(dMessage);
   });
+    
+    it.skip('Lists all messages via GET', async () => {
+        const sbeve = await User.insert({
+          displayName: 'Sbeve',
+          email: 'sbeve@busey.co',
+          profileURL: 'http://spotify.com',
+          image:
+            'https://upload.wikimedia.org/wikipedia/en/8/8b/ST3_Steve_Harrington_portrait.jpg',
+        });
+        const busey = await User.insert({
+          displayName: 'Gary Busey',
+          email: 'gary@busey.co',
+          profileURL: 'http://spotify.com',
+          image:
+            'https://images.mubicdn.net/images/cast_member/2321/cache-463-1602494874/image-w856.jpg',
+        });
+    })
 });
