@@ -37,7 +37,7 @@ describe('Artist routes', () => {
     expect(res.body).toEqual([GB, PTV]);
   });
 
-  it('Finds a users Artist by ID', async () => {
+  it.skip('Finds a users Artist by ID', async () => {
     const artist = await Artist.insert({
       id: '4iJLPqClelZOBCBifm8Fzv',
       artistName: 'Pierce The Veil',
