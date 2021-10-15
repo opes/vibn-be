@@ -32,7 +32,7 @@ describe('Artist routes', () => {
         artistGenre: ['post-hardcore', 'hardcore', 'screamo'],
     })
     
-    const res = await request(app).get('/api/v1/user/artists');
+    const res = await request(app).get('/api/v1/artists');
 
     expect(res.body).toEqual([GB, PTV]);
   });
