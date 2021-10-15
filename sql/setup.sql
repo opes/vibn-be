@@ -17,7 +17,7 @@ CREATE TABLE artists (
   artist_name TEXT NOT NULL,
   artist_image TEXT NOT NULL,
   artist_url TEXT NOT NULL,
-  artist_genre TEXT NOT NULL
+  artist_genre TEXT
 );
 
 CREATE TABLE user_artists (
